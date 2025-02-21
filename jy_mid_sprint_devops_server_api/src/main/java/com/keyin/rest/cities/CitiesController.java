@@ -3,9 +3,6 @@ package com.keyin.rest.cities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.keyin.rest.cities.Cities;
-import com.keyin.rest.cities.CitiesService;
-
 import java.util.ArrayList;
 import java.util.List;
 
