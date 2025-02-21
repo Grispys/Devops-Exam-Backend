@@ -7,7 +7,7 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>Spring Boot Blank Project (from https://github.com/JoshuaYouden/JY-Mid-Sprint-DevOps-Server-API.git)</name>
+    <name>Midterm Sprint Server side (from https://github.com/JoshuaYouden/JY-Mid-Sprint-DevOps-Server-API.git)</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
