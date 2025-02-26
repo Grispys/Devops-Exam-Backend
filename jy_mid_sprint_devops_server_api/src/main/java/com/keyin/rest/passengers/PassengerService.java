@@ -22,7 +22,7 @@ public class PassengerService {
     }
 
     public Passenger findByFirstName (String firstName) {
-        return passengerRepository.findbyFirstName(firstName);
+        return passengerRepository.findByFirstName(firstName);
     }
 
     public Passenger createPassenger(Passenger newPassenger) {
