@@ -1,5 +1,7 @@
 package com.keyin.rest.passengers;
 
+import java.util.List;
+
 import com.keyin.rest.aircraft.Aircraft;
 import com.keyin.rest.cities.Cities;
 
@@ -23,7 +25,7 @@ public class Passenger {
     private String phoneNumber;
 
     @ManyToMany
-    private Aircraft aircraft;
+    private List<Aircraft> aircraft;
 
     @ManyToOne
     private Cities city;
@@ -60,11 +62,11 @@ public class Passenger {
         this.phoneNumber = phoneNumber;
     }
 
-    public Aircraft getAircraft() {
+    public List<Aircraft> getAircraft() {
         return aircraft;
     }
 
-    public void setAircraft(Aircraft aircraft) {
+    public void setAircraft(List<Aircraft> aircraft) {
         this.aircraft = aircraft;
     }
 

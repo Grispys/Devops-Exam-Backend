@@ -1,5 +1,7 @@
 package com.keyin.rest.airports;
 
+import java.util.List;
+
 import com.keyin.rest.aircraft.Aircraft;
 import com.keyin.rest.cities.Cities;
 
@@ -7,7 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 
 
@@ -21,11 +23,11 @@ public class Airport {
     private String code;
     private String name;
 
-    @OneToMany
+    @ManyToOne
     private Cities city;
 
     @ManyToMany
-    private Aircraft aircraft;
+    private List<Aircraft> aircraft;
 
     public long getId() {
         return id;
@@ -59,11 +61,11 @@ public class Airport {
         this.city = city;
     }
 
-    public Aircraft getAircraft() {
+    public List<Aircraft> getAircraft() {
         return aircraft;
     }
 
-    public void setAircraft(Aircraft aircraft) {
+    public void setAircraft(List<Aircraft> aircraft) {
         this.aircraft = aircraft;
     }
 }

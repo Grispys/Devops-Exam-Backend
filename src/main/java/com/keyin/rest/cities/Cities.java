@@ -3,11 +3,7 @@ package com.keyin.rest.cities;
 import com.keyin.rest.airports.Airport;
 import com.keyin.rest.passengers.Passenger;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 
 @Entity
 public class Cities {
@@ -20,10 +16,10 @@ public class Cities {
     private String state;
     private int population;
 
-    @OneToMany
+    @ManyToOne
     private Airport airport;
 
-    @OneToMany
+    @ManyToOne
     private Passenger passenger;
 
     public long getId() {

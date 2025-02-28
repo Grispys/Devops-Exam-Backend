@@ -1,5 +1,7 @@
 package com.keyin.rest.aircraft;
 
+import java.util.List;
+
 import com.keyin.rest.airports.Airport;
 import com.keyin.rest.passengers.Passenger;
 
@@ -22,11 +24,11 @@ public class Aircraft {
     private int numberOfPassengers;
 
     @ManyToMany
-    private Passenger passenger;
+    private List<Passenger> passengers;
 
     @ManyToMany
-    private Airport airport;
-
+    private List<Airport> airports;
+    
     public long getId() {
         return id;
     }
@@ -59,19 +61,19 @@ public class Aircraft {
         this.numberOfPassengers = numberOfPassengers;
     }
 
-    public Passenger getPassenger() {
-        return passenger;
+    public List<Passenger> getPassengers() {
+        return passengers;
     }
 
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
+    public void setPassenger(List<Passenger> passengers) {
+        this.passengers = passengers;
     }
 
-    public Airport getAirport() {
-        return airport;
+    public List<Airport> getAirport() {
+        return airports;
     }
 
-    public void setAirport(Airport airport) {
-        this.airport = airport;
+    public void setAirport(List<Airport> airport) {
+        this.airports = airport;
     }
 }
