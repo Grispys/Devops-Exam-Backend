@@ -1,8 +1,13 @@
 package com.keyin.rest.passengers;
 
+import com.keyin.rest.aircraft.Aircraft;
+import com.keyin.rest.cities.Cities;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 
 
@@ -16,6 +21,12 @@ public class Passenger {
     private String firstName;
     private String lastName;
     private String phoneNumber;
+
+    @OneToMany
+    private Aircraft aircraft;
+
+    @OneToOne
+    private Cities city;
 
     public long getId() {
         return id;
@@ -47,5 +58,21 @@ public class Passenger {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Aircraft getAircraft() {
+        return aircraft;
+    }
+
+    public void setAircraft(Aircraft aircraft) {
+        this.aircraft = aircraft;
+    }
+
+    public Cities getCity() {
+        return city;
+    }
+
+    public void setCity(Cities city) {
+        this.city = city;
     }
 }
