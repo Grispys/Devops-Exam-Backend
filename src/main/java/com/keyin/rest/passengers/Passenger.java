@@ -6,8 +6,8 @@ import com.keyin.rest.cities.Cities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 
 
@@ -22,10 +22,10 @@ public class Passenger {
     private String lastName;
     private String phoneNumber;
 
-    @OneToMany
+    @ManyToMany
     private Aircraft aircraft;
 
-    @OneToOne
+    @ManyToOne
     private Cities city;
 
     public long getId() {

@@ -1,6 +1,7 @@
 package com.keyin.rest.cities;
 
 import com.keyin.rest.airports.Airport;
+import com.keyin.rest.passengers.Passenger;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +22,9 @@ public class Cities {
 
     @OneToMany
     private Airport airport;
+
+    @OneToMany
+    private Passenger passenger;
 
     public long getId() {
         return id;
@@ -60,5 +64,13 @@ public class Cities {
 
     public void setAirport(Airport airport) {
         this.airport = airport;
+    }
+
+    public Passenger getPassenger() {
+        return passenger;
+    }
+
+    public void setPassenger(Passenger passenger) {
+        this.passenger = passenger;
     }
 }
