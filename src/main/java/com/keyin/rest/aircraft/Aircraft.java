@@ -15,8 +15,8 @@ import jakarta.persistence.SequenceGenerator;
 @Entity
 public class Aircraft {
     @Id
-    @SequenceGenerator(name = "airport_sequence", sequenceName = "airport_sequence", allocationSize = 1, initialValue=1)
-    @GeneratedValue(generator = "airport_sequence")
+    @SequenceGenerator(name = "aircraft_sequence", sequenceName = "aircraft_sequence", allocationSize = 1, initialValue=1)
+    @GeneratedValue(generator = "aircraft_sequence")
     private long id;
 
     private String type;
