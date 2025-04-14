@@ -1,0 +1,17 @@
+com\keyin\rest\aircraft\AircraftRepository.class
+com\keyin\rest\cities\CitiesService.class
+com\keyin\RestServiceApplication.class
+com\keyin\rest\cities\CitiesRepository.class
+com\keyin\rest\passengers\Passenger.class
+com\keyin\rest\passengers\PassengerService.class
+com\keyin\rest\cities\CitiesController.class
+com\keyin\rest\aircraft\AircraftService.class
+com\keyin\rest\airports\Airport.class
+com\keyin\rest\passengers\PassengerController.class
+com\keyin\rest\passengers\PassengerRepository.class
+com\keyin\rest\aircraft\Aircraft.class
+com\keyin\rest\cities\Cities.class
+com\keyin\rest\airports\AirportRepository.class
+com\keyin\rest\airports\AirportService.class
+com\keyin\rest\aircraft\AircraftController.class
+com\keyin\rest\airports\AirportController.class
