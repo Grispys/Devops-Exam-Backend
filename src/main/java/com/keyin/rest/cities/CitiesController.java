@@ -1,5 +1,8 @@
 package com.keyin.rest.cities;
 
+import com.keyin.rest.airports.Airport;
+import com.keyin.rest.airports.AirportRepository;
+import com.keyin.rest.airports.AirportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,8 +12,10 @@ import java.util.List;
 @RestController
 @CrossOrigin
 public class CitiesController {
-        @Autowired
+    @Autowired
     private CitiesService cityService;
+    @Autowired
+    private AirportRepository airportRepository;
 
     @GetMapping("/cities")
     public List<Cities> getAllCities() {
@@ -37,6 +42,10 @@ public class CitiesController {
 
     @PostMapping("/city")
     public Cities createCity(@RequestBody Cities newCity) {
+        Airport airport = airportRepository.findById(newCity.getAirport().getId())
+                .orElseThrow(() -> new RuntimeException("Airport not found"));
+
+        newCity.setAirport(airport);
         return cityService.createCity(newCity);
     }
 
