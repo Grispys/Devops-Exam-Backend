@@ -11,24 +11,31 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 
-
+/**
+ * Aircraft class represents an aircraft able to carry passengers and fly between airports,
+ * and helps to track aircraft details, passenger connections, and airport routes. Mapped to
+ * a database with JPA, allowing persistence and querying!
+ */
 @Entity
 public class Aircraft {
     @Id
     @SequenceGenerator(name = "aircraft_sequence", sequenceName = "aircraft_sequence", allocationSize = 1, initialValue=1)
     @GeneratedValue(generator = "aircraft_sequence")
-    private long id;
 
+    // Storing String objects & primitive data types
+    private long id;
     private String type;
     private String airlineName;
     private int numberOfPassengers;
 
     @ManyToMany
-    private List<Passenger> passengers;
+    private List<Passenger> passengers; // @MTM as an aircraft can hold many passengers/they can fly on multiple planes
 
     @ManyToMany
-    private List<Airport> airports;
-    
+    private List<Airport> airports; // @MTM because one plane can land/take off at many different airports
+
+    /* ----------------------- */
+    // Accessors/mutators (getters/setters used to access or modify fields of an object)
     public long getId() {
         return id;
     }

@@ -6,10 +6,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+/**
+ * PassengerService classes purpose is to handle business logic related to passengers.
+ * Provides methods to find, create, and update passenger data.
+ */
+@Service // Marks class as a Spring service, used for dependency injection
 public class PassengerService {
     @Autowired
-    private PassengerRepository passengerRepository;
+    private PassengerRepository passengerRepository; // Inject PassengerRepository for DB interaction
 
     public List<Passenger> findAllPassengers() {
         return (List<Passenger>) passengerRepository.findAll();

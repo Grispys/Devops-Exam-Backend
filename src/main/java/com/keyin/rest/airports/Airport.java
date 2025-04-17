@@ -12,23 +12,31 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 
-
+/**
+ * Airport represents an Airport entity in the system that includes the following features:
+ * - Airport code, name, and city location
+ * - Can track aircraft associated with a specific airport
+ * - Mapped to database using JPA, which allows it to be persisted/queried
+ */
 @Entity
 public class Airport {
     @Id
     @SequenceGenerator(name = "airport_sequence", sequenceName = "airport_sequence", allocationSize = 1, initialValue=1)
     @GeneratedValue(generator = "airport_sequence")
-    private long id;
 
+    // Storing String objects & primitive data types
+    private long id;
     private String code;
     private String name;
 
     @ManyToOne
-    private Cities city;
+    private Cities city; // M@O because an airport is permanently tied to a specific city, and can't move
 
     @ManyToMany
-    private List<Aircraft> aircraft;
+    private List<Aircraft> aircraft; // @MTM because one plane can land/take off at many different airports
 
+    /* ----------------------- */
+    // Accessors/mutators (getters/setters used to access or modify fields of an object)
     public long getId() {
         return id;
     }
