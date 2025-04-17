@@ -1,5 +1,6 @@
 package com.keyin.rest.passengers;
 
+// Imports list
 import java.util.List;
 
 import com.keyin.rest.aircraft.Aircraft;
@@ -12,24 +13,34 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 
-
+/**
+ * Passenger represents a passenger entity. This class lists personal details
+ * of any passengers, including their:
+ * - Name (both first and last)
+ * - Phone number
+ * And tracks information based on which aircraft the passenger has traveled on,
+ * and which city they live in. Mapped to database with JPA.
+ */
 @Entity
 public class Passenger {
     @Id
     @SequenceGenerator(name = "passenger_sequence", sequenceName = "passenger_sequence", allocationSize = 1, initialValue=1)
     @GeneratedValue(generator = "passenger_sequence")
-    private long id;
 
+    // Storing String objects & primitive data types
+    private long id;
     private String firstName;
     private String lastName;
     private String phoneNumber;
 
     @ManyToMany
-    private List<Aircraft> aircraft;
+    private List<Aircraft> aircraft; // @MTM as a passenger can board as many flights as they'd like
 
     @ManyToOne
-    private Cities city;
+    private Cities city; // @MTO to describe their starting point, i.e: where they grew up/lived
 
+    /* ----------------------- */
+    // Accessors/mutators (getters/setters used to access or modify fields of an object)
     public long getId() {
         return id;
     }

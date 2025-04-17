@@ -5,23 +5,31 @@ import com.keyin.rest.passengers.Passenger;
 
 import jakarta.persistence.*;
 
+/**
+ * Cities represents a city entity, which includes city name, population, alongside associated airport
+ * and passengers. The class is also mapped to the database with JPA, to be persisted
+ * and queried on.
+ */
 @Entity
 public class Cities {
     @Id
     @SequenceGenerator(name = "city_sequence", sequenceName = "city_sequence", allocationSize = 1, initialValue=1)
     @GeneratedValue(generator = "city_sequence")
-    private long id;
 
+    // Storing String objects & primitive data types
+    private long id;
     private String name;
     private String state;
     private int population;
 
     @ManyToOne
-    private Airport airport;
+    private Airport airport; // M@O because an airport is permanently tied to a specific city, and can't move
 
     @ManyToOne
-    private Passenger passenger;
+    private Passenger passenger; // @MTO since the city just essentially represents where they live
 
+    /* ----------------------- */
+    // Accessors/mutators (getters/setters used to access or modify fields of an object)
     public long getId() {
         return id;
     }
